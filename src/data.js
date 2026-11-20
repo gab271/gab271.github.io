@@ -8,7 +8,7 @@ export const profile = {
   github: 'https://github.com/gab271',
   cv: '/CV_Gabriel_Medina.pdf',
   intro:
-    'Desarrollador full stack titulado en DAW. Construyo aplicaciones web de principio a fin e integro la IA en mi flujo de desarrollo.',
+    'Desarrollador junior titulado en DAW. Construyo aplicaciones web y integro la IA para ayudar a crearlas.',
 }
 
 export const featured = {
@@ -31,14 +31,14 @@ export const featured = {
   stack: ['React', 'Tailwind', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'Socket.io', 'Render'],
 }
 
-// "key" es el nombre que se usa en la terminal: abrir tcg, abrir ascend…
+// "key" es el nombre que se usa en la terminal: abrir tboi, abrir ascend…
 export const projects = [
   {
-    key: 'tcg',
-    name: 'TCG Tracker',
-    description: 'Gestor de colecciones de cartas (Pokémon, One Piece, Yu-Gi-Oh!) con precios, lista de deseos y evolución del valor de la colección.',
-    stack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
-    repo: 'https://github.com/gab271/tcg-tracker/tree/develop',
+    key: 'tboi',
+    name: 'TBOI React',
+    description: 'Web sobre The Binding of Isaac: personajes, objetos y logros, mapa interactivo, noticias por RSS y comentarios en tiempo real.',
+    stack: ['React', 'React Router', 'Leaflet', 'Firebase'],
+    repo: 'https://github.com/gab271/tboi-react',
   },
   {
     key: 'ascend',

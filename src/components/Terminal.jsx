@@ -37,7 +37,7 @@ const helpRows = [
   ['help', 'muestra esta ayuda'],
   ['whoami', 'quién soy'],
   ['proyectos', 'lista mis proyectos (también: dir, ls)'],
-  ['abrir <nombre>', 'abre un proyecto: canary, tcg, ascend'],
+  ['abrir <nombre>', 'abre un proyecto: canary, tboi, ascend'],
   ['stack', 'tecnologías con las que trabajo'],
   ['ia', 'cómo uso la inteligencia artificial'],
   ['contacto', 'email y GitHub'],
