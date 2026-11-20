@@ -8,7 +8,7 @@ export const profile = {
   github: 'https://github.com/gab271',
   cv: '/CV_Gabriel_Medina.pdf',
   intro:
-    'Desarrollador full stack titulado en DAW. Construyo aplicaciones web de principio a fin y uso la IA como parte natural de mi forma de trabajar.',
+    'Desarrollador full stack titulado en DAW. Construyo aplicaciones web de principio a fin e integro la IA en mi flujo de desarrollo.',
 }
 
 export const featured = {
@@ -31,30 +31,21 @@ export const featured = {
   stack: ['React', 'Tailwind', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'Socket.io', 'Render'],
 }
 
+// "key" es el nombre que se usa en la terminal: abrir tcg, abrir ascend…
 export const projects = [
   {
-    name: 'Cine API',
-    description: 'API REST con CRUD completo de películas y géneros y relaciones uno a muchos.',
-    stack: ['NestJS', 'TypeScript', 'MySQL'],
-    repo: 'https://github.com/gab271/cine-nestjs',
+    key: 'tcg',
+    name: 'TCG Tracker',
+    description: 'Gestor de colecciones de cartas (Pokémon, One Piece, Yu-Gi-Oh!) con precios, lista de deseos y evolución del valor de la colección.',
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind'],
+    repo: 'https://github.com/gab271/tcg-tracker/tree/develop',
   },
   {
-    name: 'GameVault',
-    description: 'Catálogo de videojuegos full stack: app híbrida que consume una API REST propia.',
-    stack: ['Angular', 'Ionic', 'Express', 'MySQL'],
-    repo: 'https://github.com/gab271/Videogames-Project',
-  },
-  {
-    name: 'TBOI React',
-    description: 'Web interactiva con mapa, fichas de contenido y datos de la API de Steam.',
-    stack: ['React', 'Vite', 'Leaflet', 'Firebase'],
-    repo: 'https://github.com/gab271/tboi-react',
-  },
-  {
-    name: 'Ronda',
-    description: 'Gestor de torneos amateur: el organizador comparte un enlace y los jugadores ven su calendario.',
-    stack: ['TypeScript', 'Supabase', 'PostgreSQL'],
-    repo: 'https://github.com/gab271/ronda',
+    key: 'ascend',
+    name: 'Ascend',
+    description: 'App de progreso personal gamificada: misiones semanales, XP, rangos, recompensas y ranking entre usuarios.',
+    stack: ['React', 'Supabase', 'PostgreSQL', 'Framer Motion'],
+    repo: 'https://github.com/gab271/ascend/tree/develop',
     status: 'En desarrollo',
   },
 ]

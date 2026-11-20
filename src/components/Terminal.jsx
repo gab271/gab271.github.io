@@ -16,17 +16,14 @@ const A = ({ href, children }) => (
 const openable = {
   canary: featured.url,
   'canary-code': featured.repo,
-  cine: projects[0].repo,
-  gamevault: projects[1].repo,
-  tboi: projects[2].repo,
-  ronda: projects[3].repo,
+  ...Object.fromEntries(projects.map((p) => [p.key, p.repo])),
   github: profile.github,
 }
 
 const snippet = (
   <>
     <M>const</M> gabriel = {'{'}{'\n'}
-    {'  '}rol: <W>'Full stack junior'</W>,{'\n'}
+    {'  '}rol: <W>'Junior Developer'</W>,{'\n'}
     {'  '}stack: [<W>'Java'</W>, <W>'Spring Boot'</W>,{'\n'}
     {'          '}<W>'TypeScript'</W>, <W>'React'</W>],{'\n'}
     {'  '}ia: <W>'en mi día a día'</W>,{'\n'}
@@ -40,7 +37,7 @@ const helpRows = [
   ['help', 'muestra esta ayuda'],
   ['whoami', 'quién soy'],
   ['proyectos', 'lista mis proyectos (también: dir, ls)'],
-  ['abrir <nombre>', 'abre un proyecto: canary, cine, gamevault…'],
+  ['abrir <nombre>', 'abre un proyecto: canary, tcg, ascend'],
   ['stack', 'tecnologías con las que trabajo'],
   ['ia', 'cómo uso la inteligencia artificial'],
   ['contacto', 'email y GitHub'],
@@ -79,9 +76,9 @@ function run(raw, { clear, download }) {
           <div className="grid grid-cols-[auto_1fr] gap-x-4">
             <M>★ canary</M>
             <span><W>{featured.name}</W> <D>— en producción ·</D> <A href={featured.url}>canaryweather.xyz</A></span>
-            {projects.map((p, i) => (
+            {projects.map((p) => (
               <div key={p.name} className="contents">
-                <span>{'  '}{['cine', 'gamevault', 'tboi', 'ronda'][i]}</span>
+                <span>{'  '}{p.key}</span>
                 <span><W>{p.name}</W> <D>— {p.stack.join(', ')}{p.status ? ` (${p.status.toLowerCase()})` : ''}</D></span>
               </div>
             ))}
