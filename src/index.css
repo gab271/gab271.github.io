@@ -1,0 +1,66 @@
+@font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url('/fonts/inter-400.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 500; font-display: swap; src: url('/fonts/inter-500.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url('/fonts/inter-600.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 700; font-display: swap; src: url('/fonts/inter-700.woff2') format('woff2'); }
+@font-face { font-family: 'Manrope'; font-weight: 700; font-display: swap; src: url('/fonts/manrope-700.woff2') format('woff2'); }
+@font-face { font-family: 'Manrope'; font-weight: 800; font-display: swap; src: url('/fonts/manrope-800.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400; font-display: swap; src: url('/fonts/jetbrains-mono-400.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 500; font-display: swap; src: url('/fonts/jetbrains-mono-500.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 600; font-display: swap; src: url('/fonts/jetbrains-mono-600.woff2') format('woff2'); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper: 255 255 255;
+    --panel: 245 244 240;
+    --ink: 20 23 28;
+    --ink-2: 60 66 76;
+    --ink-3: 107 114 128;
+    --line: 227 225 220;
+    --accent: 14 124 107;
+    --accent-soft: 228 241 238;
+    color-scheme: light;
+  }
+  .dark {
+    --paper: 17 19 23;
+    --panel: 24 27 32;
+    --ink: 237 239 242;
+    --ink-2: 196 201 208;
+    --ink-3: 140 147 158;
+    --line: 44 48 55;
+    --accent: 95 211 190;
+    --accent-soft: 20 52 47;
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  ::selection { background: rgb(var(--accent) / .22); }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 4px; }
+}
+
+@layer components {
+  .section-label {
+    @apply flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-ink;
+  }
+  .section-label::after { content: ''; @apply h-px flex-1 bg-line; }
+  .tag {
+    @apply inline-flex items-center rounded-md border border-line bg-paper px-2.5 py-1 font-mono text-xs text-ink;
+  }
+  .tag-key { @apply border-accent/60 bg-accent-soft text-accent; }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition;
+  }
+  .btn-primary { @apply bg-ink text-paper hover:opacity-85; }
+  .btn-ghost { @apply border border-line text-ink hover:border-accent hover:text-accent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
