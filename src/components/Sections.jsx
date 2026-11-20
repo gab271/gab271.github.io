@@ -92,7 +92,7 @@ export function Featured() {
       <h3 className="mb-6 mt-20 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-ink-3">Otros proyectos</h3>
       <div className="grid gap-5 sm:grid-cols-2">
         {projects.map((p) => (
-          <a key={p.name} href={p.repo} target="_blank" rel="noopener noreferrer"
+          <a key={p.name} href={p.url || p.repo} target="_blank" rel="noopener noreferrer"
              className="group flex flex-col rounded-xl border border-line p-6 transition hover:-translate-y-0.5 hover:border-accent/60">
             <div className="flex items-center justify-between gap-3">
               <h4 className="font-display text-lg font-bold text-ink">{p.name}</h4>

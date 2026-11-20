@@ -14,9 +14,9 @@ const A = ({ href, children }) => (
 
 // Proyectos que se pueden abrir con "abrir <nombre>"
 const openable = {
-  canary: featured.url,
-  'canary-code': featured.repo,
-  ...Object.fromEntries(projects.map((p) => [p.key, p.repo])),
+  [featured.key]: featured.url,
+  [`${featured.key}-code`]: featured.repo,
+  ...Object.fromEntries(projects.map((p) => [p.key, p.url || p.repo])),
   github: profile.github,
 }
 
@@ -37,7 +37,7 @@ const helpRows = [
   ['help', 'muestra esta ayuda'],
   ['whoami', 'quién soy'],
   ['proyectos', 'lista mis proyectos (también: dir, ls)'],
-  ['abrir <nombre>', 'abre un proyecto: canary, tboi, ascend'],
+  ['abrir <nombre>', 'abre un proyecto: tboi, canary, ascend'],
   ['stack', 'tecnologías con las que trabajo'],
   ['ia', 'cómo uso la inteligencia artificial'],
   ['contacto', 'email y GitHub'],
@@ -74,8 +74,8 @@ function run(raw, { clear, download }) {
         <>
           <D> Directorio de C:\gabriel\proyectos{'\n\n'}</D>
           <div className="grid grid-cols-[auto_1fr] gap-x-4">
-            <M>★ canary</M>
-            <span><W>{featured.name}</W> <D>— en producción ·</D> <A href={featured.url}>canaryweather.xyz</A></span>
+            <M>★ {featured.key}</M>
+            <span><W>{featured.name}</W> <D>— destacado ·</D> <A href={featured.url}>{featured.url.replace('https://', '')}</A></span>
             {projects.map((p) => (
               <div key={p.name} className="contents">
                 <span>{'  '}{p.key}</span>
@@ -83,7 +83,7 @@ function run(raw, { clear, download }) {
               </div>
             ))}
           </div>
-          {'\n'}<D>Escribe </D><M>abrir canary</M><D> para verlo.</D>
+          {'\n'}<D>Escribe </D><M>abrir {featured.key}</M><D> para verlo.</D>
         </>
       )
     case 'abrir':
@@ -115,7 +115,7 @@ function run(raw, { clear, download }) {
       )
     case 'cv':
       download()
-      return <>Descargando <W>CV_Gabriel_Medina.pdf</W>… <M>✓</M></>
+      return <>Descargando <W>CV_Gabriel_Medina_2026.pdf</W>… <M>✓</M></>
     case 'type':
     case 'cat':
       if (!arg) return <>Uso: <M>{cmd} gabriel.js</M></>
@@ -163,7 +163,7 @@ export function Terminal() {
   const download = () => {
     const a = document.createElement('a')
     a.href = profile.cv
-    a.download = 'CV_Gabriel_Medina.pdf'
+    a.download = 'CV_Gabriel_Medina_2026.pdf'
     a.click()
   }
 

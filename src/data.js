@@ -6,39 +6,42 @@ export const profile = {
   location: 'Las Palmas de Gran Canaria',
   email: 'gabrielmedinaxl@gmail.com',
   github: 'https://github.com/gab271',
-  cv: '/CV_Gabriel_Medina.pdf',
+  cv: '/CV_Gabriel_Medina_2026.pdf',
   intro:
     'Desarrollador junior titulado en DAW. Construyo aplicaciones web y integro la IA para ayudar a crearlas.',
 }
 
 export const featured = {
-  name: 'Canary Weather',
-  url: 'https://canaryweather.xyz',
-  repo: 'https://github.com/gab271/canary-weather',
+  key: 'tboi',
+  name: 'TBOI Codex',
+  url: 'https://gab271.github.io/tboi-react/',
+  repo: 'https://github.com/gab271/tboi-react',
   period: '2025 — 2026',
-  summary: 'Plataforma meteorológica para las Islas Canarias, desarrollada en equipo y en producción.',
+  summary: 'Enciclopedia y seguimiento de progreso para The Binding of Isaac. Mi proyecto personal más trabajado, de principio a fin.',
   metrics: [
-    { value: '~200', label: 'commits propios' },
+    { value: '117', label: 'commits' },
+    { value: '700+', label: 'objetos' },
     { value: 'Full stack', label: 'front-end + API' },
-    { value: 'Online', label: 'en producción' },
   ],
   highlights: [
-    'Mapa interactivo con Leaflet, previsión por horas y versión bilingüe español / inglés.',
-    'Asistente meteorológico conectado a la API de OpenAI.',
-    'Avisos oficiales vía Meteoalarm, filtrados por nivel de severidad.',
-    'API REST con autenticación JWT, validación, caché y tests con Vitest y Jest.',
+    'Códice con más de 700 objetos, personajes, jefes y sinergias, con búsqueda y filtros.',
+    'Lectura de partidas guardadas para seguir el progreso hacia el 100 % (Dead God).',
+    'Zona de comunidad: builds compartidas, tier list con votaciones y seeds.',
+    'API REST en Express con Supabase (PostgreSQL, Auth, Storage), JWT y rate limiting.',
   ],
-  stack: ['React', 'Tailwind', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'Socket.io', 'Render'],
+  stack: ['React', 'Vite', 'Tailwind', 'React Query', 'Framer Motion', 'i18next', 'Express', 'Supabase'],
 }
 
-// "key" es el nombre que se usa en la terminal: abrir tboi, abrir ascend…
+// "key" es el nombre que se usa en la terminal: abrir canary, abrir ascend…
 export const projects = [
   {
-    key: 'tboi',
-    name: 'TBOI React',
-    description: 'Web sobre The Binding of Isaac: personajes, objetos y logros, mapa interactivo, noticias por RSS y comentarios en tiempo real.',
-    stack: ['React', 'React Router', 'Leaflet', 'Firebase'],
-    repo: 'https://github.com/gab271/tboi-react',
+    key: 'canary',
+    name: 'Canary Weather',
+    description: 'Plataforma meteorológica de Canarias desarrollada en equipo: mapa interactivo, asistente con OpenAI y API REST con JWT.',
+    stack: ['React', 'Node.js', 'Express', 'PostgreSQL'],
+    url: 'https://canaryweather.xyz',
+    repo: 'https://github.com/gab271/canary-weather',
+    status: 'En producción',
   },
   {
     key: 'ascend',
