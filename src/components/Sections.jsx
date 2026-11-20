@@ -1,4 +1,5 @@
 import { Icon } from './Icon'
+import { Terminal } from './Terminal'
 import { profile, featured, projects, skills, ai, timeline } from '../data'
 
 function Label({ n, children }) {
@@ -34,23 +35,7 @@ export function Hero() {
           </div>
         </div>
 
-        <figure className="rounded-2xl bg-graphite p-6 font-mono text-[13px] leading-7 text-[#C9CFD6] shadow-2xl shadow-black/10 ring-1 ring-white/5">
-          <div className="mb-4 flex gap-1.5" aria-hidden="true">
-            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-            <span className="h-2.5 w-2.5 rounded-full bg-mint/70" />
-          </div>
-          <pre className="overflow-x-auto"><code>
-<span className="text-mint">const</span> gabriel = {'{'}{'\n'}
-{'  '}rol: <span className="text-white">'Full stack junior'</span>,{'\n'}
-{'  '}stack: [<span className="text-white">'Java'</span>, <span className="text-white">'Spring Boot'</span>,{'\n'}
-{'          '}<span className="text-white">'TypeScript'</span>, <span className="text-white">'React'</span>],{'\n'}
-{'  '}ia: <span className="text-white">'en mi día a día'</span>,{'\n'}
-{'  '}base: <span className="text-white">'Gran Canaria'</span>,{'\n'}
-{'  '}busca: <span className="text-white">'mi primer equipo'</span>{'\n'}
-{'}'}
-          </code></pre>
-        </figure>
+        <Terminal />
       </div>
     </section>
   )
